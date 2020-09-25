@@ -1,3 +1,61 @@
-body {
-  background-color: blue;
+#form-control {
+  width: 500px;
+}
+
+.info {
+  padding: 50px;
+}
+
+nav {
+  height: 100px;
+}
+
+.navbar-brand {
+  padding-left: 20px;
+}
+
+.info {
+  padding-top: 100px;
+}
+
+h5 {
+  color: gray;
+}
+
+.info-container {
+  padding-top: 10px;
+}
+
+.info-emoji {
+  font-size: 25px;
+}
+
+.review-form {
+  padding-top: 100px;
+}
+
+#reviewTextArea {
+  width: 400px;
+  height: 200px;
+}
+
+.apt-img {
+  height: 325px;
+}
+
+.reviews {
+  padding-top: 40px;
+}
+
+.review-container {
+  background: #d3d3d3;
+  border: 1px solid #d0e5f5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-bottom: 48px;
+  width: 450px;
+}
+
+.review-text {
+  padding: 10px;
 }

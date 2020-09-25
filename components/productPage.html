@@ -1,17 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
-  <title>TODO Title</title>
-  <link rel="stylesheet" href="../styles/productPageStyles.css">
+    <title>CU Apartments</title>
+    <link rel="stylesheet" href="../styles/productPageStyles.css" />
+  </head>
 
-</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">CU Apartments</a>
 
-<body>
-  <div>
-    <a href="reviewsComponent.html">Link to reviews component</a>
-  </div>
-</body>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-3"
+            type="search"
+            placeholder="🔍  Search"
+            aria-label="Search"
+            id="form-control"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Go!
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="info">
+      <div class="row justify-content-md-center">
+        <div class="col-sm-5">
+          <h2>Collegetown Plaza</h2>
+          <h5>111 Dryden Road, Ithaca, NY 14850</h5>
+          <div class="info-container">
+            <p class="info-emoji">🌟 🌟 🌟 🌟</p>
+            <p class="info-emoji">💰 💰 💰</p>
+          </div>
+
+          <form class="review-form">
+            <h3>Leave a review! ⬇️</h3>
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                id="reviewTextArea"
+                rows="3"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+
+        <div class="col-sm-5">
+          <img src="../images/ctownplaza.jpg" class="apt-img" alt="Apartment" />
+          <div class="reviews">
+            <h3>Reviews</h3>
+            <div class="review-container">
+              <p class="review-text">
+                Amazing place to live! Great amenities and close to campus.
+                10/10 recommend!
+              </p>
+            </div>
+
+            <div class="review-container">
+              <p class="review-text">
+                Really like the apartment, but our heater wasn't working and it
+                took us days for us to get it fixed
+              </p>
+            </div>
+
+            <div class="review-container">
+              <p class="review-text">
+                I have lived here for two years now and I can say that Ithaca
+                renting company is super sweet and helpful! However, I wish that
+                the apartment was slightly bigger.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
