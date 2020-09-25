@@ -1,20 +1,50 @@
-#form-control {
-  width: 500px;
-}
-
-.info {
-  padding: 50px;
-}
-
+/* --------NAV BAR + SEARCH STYLING--------*/
 nav {
   height: 100px;
+}
+
+#form-control {
+  width: 500px;
 }
 
 .navbar-brand {
   padding-left: 20px;
 }
 
+/*--------FORM STYLING--------*/
+
+.review-form {
+  padding-top: 100px;
+}
+
+#reviewTextArea {
+  width: 400px;
+  height: 200px;
+}
+
+/*--------REVIEW STYLING--------*/
+
+.review-container {
+  background: #d3d3d3;
+  border: 1px solid #d0e5f5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-bottom: 48px;
+  width: 450px;
+}
+
+.review-text {
+  padding: 10px;
+}
+
+.reviews {
+  padding-top: 40px;
+}
+
+/*--------APT INFO STYLING--------*/
+
 .info {
+  padding: 50px;
   padding-top: 100px;
 }
 
@@ -30,32 +60,6 @@ h5 {
   font-size: 25px;
 }
 
-.review-form {
-  padding-top: 100px;
-}
-
-#reviewTextArea {
-  width: 400px;
-  height: 200px;
-}
-
 .apt-img {
   height: 325px;
-}
-
-.reviews {
-  padding-top: 40px;
-}
-
-.review-container {
-  background: #d3d3d3;
-  border: 1px solid #d0e5f5;
-  box-sizing: border-box;
-  border-radius: 10px;
-  margin-bottom: 48px;
-  width: 450px;
-}
-
-.review-text {
-  padding: 10px;
 }
