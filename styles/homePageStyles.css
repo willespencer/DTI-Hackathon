@@ -1,3 +1,83 @@
-body {
-  background-color: red;
+/* --------NAV BAR STYLING--------*/
+nav {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  padding-left: 20px;
+}
+
+/* --------BOX STYLING--------*/
+
+.content {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  border: 2px gray solid;
+  padding: 20px 30px;
+}
+
+.boxTitle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.filters {
+  margin-top: 20px;
+}
+
+#form-control {
+  width: 500px;
+}
+
+/*--------APARTMENT STYLING--------*/
+
+.bottom {
+  margin: 40px 10vw;
+}
+
+.apartments {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.apartment-container {
+  background: #d3d3d3;
+  border: 1px solid #d0e5f5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-bottom: 48px;
+  width: 550px;
+  padding-top: 30px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.apartment-text {
+  padding: 10px;
+}
+
+.image {
+  width: 300px;
+}
+
+.info-container {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.info-emoji {
+  font-size: 15px;
 }
