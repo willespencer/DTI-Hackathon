@@ -1,69 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
 
-  <title>CU Apartments</title>
-  <link rel="stylesheet" href="styles/homePageStyles.css">
-  <link
-  rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-  crossorigin="anonymous"
-  />
+    <title>CU Apartments</title>
+    <link rel="stylesheet" href="styles/homePageStyles.css" />
+    <link rel="stylesheet" href="styles/reviewStyles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
 
-</head>
-
-<body>
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="">CU Apartments</a>
-    <a href="components/reviewsComponent.html">
-      <button class="navbar-button btn btn-outline-success my-2 my-sm-0">
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="">CU Apartments</a>
+      <!-- <a href="components/reviewsComponent.html"> -->
+      <button
+        class="navbar-button btn btn-outline-success my-2 my-sm-0"
+        id="button"
+        data-target="#exampleModal"
+        data-toggle="modal"
+      >
         Write a Review!
       </button>
-    </a>
-  </nav>
-
-  <div class="content">
-    <div class="box">
-      <span class="boxTitle">Properties & Landlords</span>
-      <!-- TODO turn div back into form after search "works" -->
-      <div class="form-inline my-2 my-lg-0">
-        <input
-          class="form-control mr-sm-3"
-          type="search"
-          placeholder="🔍  Search"
-          aria-label="Search"
-          id="form-control"
-        />
-        <a href="components/productPage.html">
-          <button class="btn btn-outline-success my-2 my-sm-0">
-            Go!
-          </button>
-        </a>
-      </div>
-
-      <div class="filters">
-        INSERT FILTERS HERE?
-      </div>
-    </div>
-  </div>
-    
-  <div class="bottom">
-    <h3>Sample Apartments</h3>
-    <div class="apartments">
-      <div class="apartment-container">
-        <img src="images/ctownplaza.jpg" class="image" alt="Apartment" />
-        <a href="components/productPage.html"><h2>Collegetown Plaza</h2></a>
-        <h5>111 Dryden Road, Ithaca, NY 14850</h5>
-        <div class="info-container">
-          <p class="info-emoji">🌟 🌟 🌟 🌟</p>
-          <p class="info-emoji">💰 💰 💰</p>
-          <p>Reviews: 3</p>
+      <!-- Button trigger modal -->
+    </nav>
+    <div class="bg-modal" id="bg-modal">
+      <div class="modal-content">
+        <div class="close" id="close">+</div>
+        <div style="text-align: center"></div>
+            <label>Write a review</label>
+            <textarea  style="margin: 2em" rows="10" cols="50">
+            </textarea>
+            
+            <div style = "align-content: center">
+            <a href="" class="btn btn-primary" style = "width:200px"> Submit </a>
+          </div>
+          
         </div>
       </div>
-  
+    </div>
+
+    <div class="content">
+      <div class="box">
+        <span class="boxTitle">Properties & Landlords</span>
+        <!-- TODO turn div back into form after search "works" -->
+        <div class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-3"
+            type="search"
+            placeholder="🔍  Search"
+            aria-label="Search"
+            id="form-control"
+          />
+          <a href="components/productPage.html">
+            <button class="btn btn-outline-success my-2 my-sm-0">Go!</button>
+          </a>
+        </div>
+
+        <div class="filters">INSERT FILTERS HERE?</div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <h3>Sample Apartments</h3>
       <div class="apartments">
         <div class="apartment-container">
           <img src="images/ctownplaza.jpg" class="image" alt="Apartment" />
@@ -75,21 +79,34 @@
             <p>Reviews: 3</p>
           </div>
         </div>
-      </div>
-  
-      <div class="apartments">
-        <div class="apartment-container">
-          <img src="images/ctownplaza.jpg" class="image" alt="Apartment" />
-          <a href="components/productPage.html"><h2>Collegetown Plaza</h2></a>
-          <h5>111 Dryden Road, Ithaca, NY 14850</h5>
-          <div class="info-container">
-            <p class="info-emoji">🌟 🌟 🌟 🌟</p>
-            <p class="info-emoji">💰 💰 💰</p>
-            <p>Reviews: 3</p>
+
+        <div class="apartments">
+          <div class="apartment-container">
+            <img src="images/ctownplaza.jpg" class="image" alt="Apartment" />
+            <a href="components/productPage.html"><h2>Collegetown Plaza</h2></a>
+            <h5>111 Dryden Road, Ithaca, NY 14850</h5>
+            <div class="info-container">
+              <p class="info-emoji">🌟 🌟 🌟 🌟</p>
+              <p class="info-emoji">💰 💰 💰</p>
+              <p>Reviews: 3</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="apartments">
+          <div class="apartment-container">
+            <img src="images/ctownplaza.jpg" class="image" alt="Apartment" />
+            <a href="components/productPage.html"><h2>Collegetown Plaza</h2></a>
+            <h5>111 Dryden Road, Ithaca, NY 14850</h5>
+            <div class="info-container">
+              <p class="info-emoji">🌟 🌟 🌟 🌟</p>
+              <p class="info-emoji">💰 💰 💰</p>
+              <p>Reviews: 3</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
+    <script src="./scripts/main.js"></script>
+  </body>
 </html>
