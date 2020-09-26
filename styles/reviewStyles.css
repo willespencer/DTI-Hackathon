@@ -6,7 +6,7 @@
   top: 9;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   display: none;
   z-index: 5;
 }
@@ -16,9 +16,9 @@
   height: 500px;
   background-color: white;
   border-radius: 4px;
-  text-align: center;
+  text-align: left;
   padding: 20px;
-  position: center;
+  position: left;
   overflow: auto !important;
 }
 
@@ -36,3 +36,16 @@ input {
   transform: rotate(45deg);
   cursor: pointer;
 }
+
+.formfield {
+  text-align: left;
+}
+
+a.btn-primary {
+  background-color: #d01d38;
+  border-color: #d01d38;
+}
+
+/* .btn {
+  font-size: 0.25rem !important;
+} */

@@ -7,6 +7,7 @@
     <title>CU Apartments</title>
     <link rel="stylesheet" href="styles/homePageStyles.css" />
     <link rel="stylesheet" href="styles/reviewStyles.css" />
+    <link rel="stylesheet" href="styles/rating.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -32,14 +33,42 @@
     <div class="bg-modal" id="bg-modal">
       <div class="modal-content">
         <div class="close" id="close">+</div>
-        <div style="text-align: center"></div>
-            <label>Write a review</label>
-            <textarea  style="margin: 2em" rows="10" cols="50">
-            </textarea>
+        <!-- <div style="text-align: center"></div> -->
+            <h4 style=" color:#D01D38;"> Leave a review</h4>
+            <h6>Search property name</h6>
             
-            <div style = "align-content: center">
-            <a href="" class="btn btn-primary" style = "width:200px"> Submit </a>
-          </div>
+            
+              <div class="input-group mb-3">
+                <select class="custom-select" id="inputGroupSelect02">
+                  <option selected>Choose unit type</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <h6> Overall </h6>
+              <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+              </div>
+              <h6> Landlord </h6>
+              <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+              </div>
+              
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">test</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+            
+              <textarea  margstyle="align-content:left;" rows="5" cols="0" placeholder=" Add specific feedback here"></textarea>
+              
+            <a href=""  style = "align-content: left" class="btn btn-primary" style = "width:200px; margin: 2em"> Submit </a>
+         
+           
           
         </div>
       </div>
