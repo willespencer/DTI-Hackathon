@@ -44,6 +44,29 @@ input {
 a.btn-primary {
   background-color: #d01d38;
   border-color: #d01d38;
+  margin: auto;
+  margin-left: 0.05%;
+}
+
+a.btn-primary:hover {
+  background: #d01d38;
+}
+
+a.btn-primary:active {
+  color: #d01d38;
+}
+a.btn-primary:active {
+  color: #d01d38 !important;
+}
+
+.btn-secondary {
+  font-size: 0.75rem !important;
+  background: white !important;
+  color: gray !important;
+}
+
+.label {
+  font-size: 0.5rem !important;
 }
 
 /* .btn {
