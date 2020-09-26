@@ -57,7 +57,7 @@ nav {
 
   box-sizing: border-box;
   margin-bottom: 48px;
-  width: 550px;
+  width: 410px;
   padding: 32px;
 
   display: flex;
@@ -70,7 +70,9 @@ nav {
 }
 
 .image {
-  width: 300px;
+  max-height: 200px;
+  margin-bottom: 24px;
+  border-radius: 16px;
 }
 
 .pin {
@@ -81,6 +83,7 @@ nav {
   display: flex;
   flex-direction: row;
   width: 100%;
+  font-size: 28px;
 }
 
 .info-container {
@@ -94,24 +97,46 @@ nav {
   font-size: 15px;
 }
 
+.numReviews {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
 .otherInfo {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  font-size: 16px;
 }
 
 .attributes {
   display: flex;
   flex-wrap: wrap;
   margin-top: 16px;
+  margin-left: -8px;
+  margin-right: -8px;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .attribute {
-  background-color: #8CDCA3;
   border-radius: 200px;
   padding: 8px 16px;
-  margin-right: 16px;
+  margin-right: 8px;
+  margin-left: 8px;
   margin-bottom: 16px;
+}
+
+.attribute--green {
+  background-color: #8CDCA3;
+}
+
+.attribute--red {
+  background: #FF8469;
+}
+
+.attribute--yellow {
+  background-color: #F9EE90;
 }
 
 .bg-modal {
