@@ -161,7 +161,7 @@ const apartments = [
     "overall_rating": 3,
     "landlord_rating": 2,
     "tags_list": {
-      "noise": 2,
+      "noise": 1,
       "location": 3,
       "amenities": 2
     },

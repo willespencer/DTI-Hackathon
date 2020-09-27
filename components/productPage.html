@@ -16,6 +16,7 @@
     />
 
     <title>CU Apartments</title>
+    <link rel="stylesheet" href="../styles/homePageStyles.css" />
     <link rel="stylesheet" href="../styles/productPageStyles.css" />
   </head>
 
@@ -282,10 +283,41 @@
   right_div.prepend(img_element);
 
   // Populate reviews
+
+  // create tags for each apartment div
+  const attributes_div = document.createElement('div');
+  attributes_div.className = 'attributes';
+
+  let attributes_div_innerHTML = '';
+  Object.entries(apartment.tags_list).forEach( t => {
+    const tag = t[0];
+    const rating = t[1];
+
+    let color;
+
+    if (rating == 1) {
+      color = 'red';
+    }
+    else if (rating == 2) {
+      color = 'yellow';
+    }
+    else {
+      color = 'green';
+    }
+
+    attributes_div_innerHTML +=  '<span class="attribute attribute--' + color + '">' + tag.charAt(0).toUpperCase() + tag.slice(1) + '</span>'
+  });
+  attributes_div.innerHTML = attributes_div_innerHTML;
+
+  const reviews_div = document.getElementsByClassName('reviews')[0];
+  reviews_div.prepend(attributes_div);
+
+
+
   const review_h3 = document.createElement('h3');
   review_h3.innerHTML = "Past Reviews (" + apartment.reviews.length + ")";
 
-  const reviews_div = document.getElementsByClassName('reviews')[0];
+  // const reviews_div = document.getElementsByClassName('reviews')[0];
   reviews_div.prepend(review_h3);
 
   apartment.reviews.forEach( review => {
