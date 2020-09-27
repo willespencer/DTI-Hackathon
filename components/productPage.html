@@ -23,12 +23,12 @@
           <input
             class="form-control mr-sm-3"
             type="search"
-            placeholder="🔍  Search"
+            placeholder="🔍  Search by any location e.g. '301 College Ave'"
             aria-label="Search"
             id="form-control"
           />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Go!
+          <button class="btn my-2 my-sm-0" id="search" type="submit">
+            Search
           </button>
         </form>
       </div>
@@ -39,48 +39,234 @@
         <div class="col-sm-5">
           <h2>Collegetown Plaza</h2>
           <h5>111 Dryden Road, Ithaca, NY 14850</h5>
+          <h5>Ithaca Renting Company</h5>
           <div class="info-container">
             <p class="info-emoji">🌟 🌟 🌟 🌟</p>
             <p class="info-emoji">💰 💰 💰</p>
           </div>
 
           <form class="review-form">
-            <h3>Leave a review! ⬇️</h3>
+            <h3 class="leave-review">Leave a Review ⬇️</h3>
             <div class="form-group">
-              <textarea
+              <!-- <textarea
                 class="form-control"
                 id="reviewTextArea"
                 rows="3"
               ></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button> -->
+              <h6>Search property name</h6>
+              <input
+                class="form-control mr-sm-3"
+                type="search"
+                placeholder="🔍  '301 College Ave'"
+                aria-label="Search"
+                id="form-control"
+              />
+
+              <div class="input-group mb-3" id="select">
+                <select class="custom-select" id="inputGroupSelect02">
+                  <option selected>Choose unit type</option>
+                  <option value="1">Studio</option>
+                  <option value="2">1 BD</option>
+                  <option value="3">2 BD</option>
+                  <option value="3">3 BD</option>
+                  <option value="3">4 BD</option>
+                </select>
+              </div>
+              <h6>Overall</h6>
+              <div class="rating">
+                <input type="radio" name="rating" value="5" id="5" /><label
+                  for="5"
+                  >☆</label
+                >
+                <input type="radio" name="rating" value="4" id="4" /><label
+                  for="4"
+                  >☆</label
+                >
+                <input type="radio" name="rating" value="3" id="3" /><label
+                  for="3"
+                  >☆</label
+                >
+                <input type="radio" name="rating" value="2" id="2" /><label
+                  for="2"
+                  >☆</label
+                >
+                <input type="radio" name="rating" value="1" id="1" /><label
+                  for="1"
+                  >☆</label
+                >
+              </div>
+              <h6>Landlord</h6>
+              <div class="rating">
+                <input type="radio" name="rating" value="5" id="5" /><label
+                  for="5"
+                  >☆</label
+                >
+                <input type="radio" name="rating" value="4" id="4" /><label
+                  for="4"
+                  >☆</label
+                >
+                <input type="radio" name="rating" value="3" id="3" /><label
+                  for="3"
+                  >☆</label
+                >
+                <input type="radio" name="rating" value="2" id="2" /><label
+                  for="2"
+                  >☆</label
+                >
+                <input type="radio" name="rating" value="1" id="1" /><label
+                  for="1"
+                  >☆</label
+                >
+              </div>
+
+              <div class="dropdown">
+                <h6 style="display: inline-block; font-size: 15px">
+                  amenities
+                </h6>
+                <button
+                  class="btn dropdown-toggle"
+                  style="margin: 0.5em"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  rate
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">sadf</a>
+                  <a class="dropdown-item" href="#">sadf</a>
+                  <a class="dropdown-item" href="#">asdf</a>
+                </div>
+                <h6 style="display: inline-block; font-size: 15px">location</h6>
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  style="margin: 0.5em"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  rate
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">test</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+                <h6 style="display: inline-block; font-size: 15px">laundry</h6>
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  style="margin: 0.5em"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  rate
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">test</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+                <h6 style="display: inline-block; font-size: 15px">wifi</h6>
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  style="margin: 0.5em"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  rate
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">test</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+
+              <textarea
+                style="align-content: left"
+                rows="5"
+                cols="0"
+                placeholder=" Add specific feedback here"
+                id="reviewTextArea"
+              ></textarea>
+
+              <div class="buttoncontainer">
+                <button class="btn my-2 my-sm-0" id="submit" type="submit">
+                  Submit
+                </button>
+              </div>
+            </div>
           </form>
         </div>
 
         <div class="col-sm-5">
           <img src="../images/ctownplaza.jpg" class="apt-img" alt="Apartment" />
           <div class="reviews">
-            <h3>Reviews</h3>
+            <h3>Past Reviews (3)</h3>
             <div class="review-container">
-              <p class="review-text">
+              <div class="row">
+                <div class="col-sm-5">
+                  <p id="left-col">09/27/2020</p>
+                  <p id="left-col">Overall: 3/5</p>
+                  <p id="left-col">Landlord: 3/5</p>
+                </div>
+                <div class="col-sm-6">
+                  <p id="right-col">
+                    Really like the apartment, but our heater wasn't working and
+                    it took us days for us to get it fixed.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- <p class="review-text">
+
                 Amazing place to live! Great amenities and close to campus.
                 10/10 recommend!
-              </p>
+              </p> -->
+
+            <div class="review-container">
+              <div class="row">
+                <div class="col-sm-5">
+                  <p id="left-col">09/27/2020</p>
+                  <p id="left-col">Overall: 3/5</p>
+                  <p id="left-col">Landlord: 3/5</p>
+                </div>
+                <div class="col-sm-6">
+                  <p id="right-col">
+                    Really like the apartment, but our heater wasn't working and
+                    it took us days for us to get it fixed.
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div class="review-container">
-              <p class="review-text">
-                Really like the apartment, but our heater wasn't working and it
-                took us days for us to get it fixed
-              </p>
-            </div>
-
-            <div class="review-container">
-              <p class="review-text">
-                I have lived here for two years now and I can say that Ithaca
-                renting company is super sweet and helpful! However, I wish that
-                the apartment was slightly bigger.
-              </p>
+              <div class="row">
+                <div class="col-sm-5">
+                  <p id="left-col">09/27/2020</p>
+                  <p id="left-col">Overall: 3/5</p>
+                  <p id="left-col">Landlord: 3/5</p>
+                </div>
+                <div class="col-sm-6">
+                  <p id="right-col">
+                    Really like the apartment, but our heater wasn't working and
+                    it took us days for us to get it fixed.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

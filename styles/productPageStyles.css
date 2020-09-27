@@ -11,26 +11,66 @@ nav {
   padding-left: 20px;
 }
 
+#search {
+  width: 150px;
+  background-color: #d01d38;
+  color: white;
+}
+
 /*--------FORM STYLING--------*/
 
 .review-form {
-  padding-top: 100px;
+  background-color: #ffe2b1;
+  border-radius: 10px;
+  padding: 20px;
+  width: 650px;
 }
 
 #reviewTextArea {
-  width: 400px;
+  width: 500px;
   height: 200px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.leave-review {
+  color: #d01d38;
+}
+
+.dropdown {
+  padding-bottom: 10px;
+}
+
+#select {
+  width: 500px;
+  padding-top: 20px;
+}
+
+#dropdownMenuButton {
+  color: grey;
+  background-color: white;
+}
+
+#submit {
+  width: 150px;
+  background-color: #d01d38;
+  color: white;
+}
+
+.buttoncontainer {
+  padding-top: 10px;
 }
 
 /*--------REVIEW STYLING--------*/
 
 .review-container {
-  background: #d3d3d3;
-  border: 1px solid #d0e5f5;
+  background: white;
+  border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 10px;
   margin-bottom: 48px;
   width: 450px;
+  overflow: scroll;
 }
 
 .review-text {
@@ -39,6 +79,15 @@ nav {
 
 .reviews {
   padding-top: 40px;
+}
+
+#left-col {
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+#right-col {
+  padding-top: 5px;
 }
 
 /*--------APT INFO STYLING--------*/
