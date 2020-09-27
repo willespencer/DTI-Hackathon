@@ -50,7 +50,7 @@ nav {
 }
 
 .apartment-container {
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 2px 4px rgba(33, 36, 41, 0.05);
   border-radius: 12px;
   filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.25));
@@ -128,15 +128,15 @@ nav {
 }
 
 .attribute--green {
-  background-color: #8CDCA3;
+  background-color: #8cdca3;
 }
 
 .attribute--red {
-  background: #FF8469;
+  background: #ff8469;
 }
 
 .attribute--yellow {
-  background-color: #F9EE90;
+  background-color: #f9ee90;
 }
 
 .bg-modal {
