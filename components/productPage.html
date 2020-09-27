@@ -51,8 +51,8 @@
                 <h6 id="apartment-landlord"></h6>
               </div>
               <div class="col" id="ratings">
-                <p id="landlord-rating">Landlord: </p>
-                <p id="overall-rating">Overall: </p>
+                <p id="landlord-rating">Landlord:</p>
+                <p id="overall-rating">Overall:</p>
               </div>
             </div>
           </div>
@@ -87,25 +87,28 @@
                 </select>
               </div>
               <h6>Overall</h6>
-              <ul class="rate-area">
-                <input type="radio" id="5-star" name="crating" value="5" />
-                <label for="5-star" title="Amazing">5 stars</label>
-                <input type="radio" id="4-star" name="crating" value="4" />
-                <label for="4-star" title="Good">4 stars</label>
-                <input type="radio" id="3-star" name="crating" value="3" />
-                <label for="3-star" title="Average">3 stars</label>
-                <input type="radio" id="2-star" name="crating" value="2" />
-                <label for="2-star" title="Not Good">2 stars</label>
-                <input
-                  type="radio"
-                  id="1-star"
-                  required=""
-                  name="crating"
-                  value="1"
-                  aria-required="true"
-                />
-                <label for="1-star" title="Bad">1 star</label>
-              </ul>
+              <div class="rating">
+                <input type="radio" name="rating" value="5" id="5" /><label
+                  for="5"
+                  >☆</label
+                >
+                <input type="radio" name="rating" value="4" id="4" /><label
+                  for="4"
+                  >☆</label
+                >
+                <input type="radio" name="rating" value="3" id="3" /><label
+                  for="3"
+                  >☆</label
+                >
+                <input type="radio" name="rating" value="2" id="2" /><label
+                  for="2"
+                  >☆</label
+                >
+                <input type="radio" name="rating" value="1" id="1" /><label
+                  for="1"
+                  >☆</label
+                >
+              </div>
               <h6>Landlord</h6>
               <div class="rating">
                 <input type="radio" name="rating" value="5" id="5" /><label
@@ -239,7 +242,9 @@
   const urlParams = new URLSearchParams(queryString);
   const apartment_name = urlParams.get('name');
 
-  const apartment = apartments.filter( apartment => apartment.name == apartment_name)[0];
+  const apartment = apartments.filter(
+    (apartment) => apartment.name == apartment_name
+  )[0];
 
   // Populate apartment details on left panel
   const apartment_name_h2 = document.getElementById('apartment-name');
@@ -255,7 +260,8 @@
   const landlord_rating_element = document.getElementById('landlord-rating');
 
   for (i = 0; i < apartment.landlord_rating; i++) {
-    landlord_rating_element.innerHTML += '<span class="fa fa-star checked"></span>';
+    landlord_rating_element.innerHTML +=
+      '<span class="fa fa-star checked"></span>';
   }
   for (i = 0; i < 5 - apartment.landlord_rating; i++) {
     landlord_rating_element.innerHTML += '<span class="fa fa-star"></span>';
@@ -264,7 +270,8 @@
   const overall_rating_element = document.getElementById('overall-rating');
 
   for (i = 0; i < apartment.overall_rating; i++) {
-    overall_rating_element.innerHTML += '<span class="fa fa-star checked"></span>';
+    overall_rating_element.innerHTML +=
+      '<span class="fa fa-star checked"></span>';
   }
   for (i = 0; i < 5 - apartment.overall_rating; i++) {
     overall_rating_element.innerHTML += '<span class="fa fa-star"></span>';
@@ -272,9 +279,9 @@
 
   // Populate right panel with data
   const img_element = document.createElement('img');
-  img_element.src = "../images/" + apartment.image + ".jpg";
-  img_element.className = "apt-img";
-  img_element.alt = "Apartment";
+  img_element.src = '../images/' + apartment.image + '.jpg';
+  img_element.className = 'apt-img';
+  img_element.alt = 'Apartment';
 
   const right_div = document.getElementById('right');
   right_div.prepend(img_element);
@@ -286,7 +293,7 @@
   attributes_div.className = 'attributes';
 
   let attributes_div_innerHTML = '';
-  Object.entries(apartment.tags_list).forEach( t => {
+  Object.entries(apartment.tags_list).forEach((t) => {
     const tag = t[0];
     const rating = t[1];
 
@@ -294,48 +301,55 @@
 
     if (rating == 1) {
       color = 'red';
-    }
-    else if (rating == 2) {
+    } else if (rating == 2) {
       color = 'yellow';
-    }
-    else {
+    } else {
       color = 'green';
     }
 
-    attributes_div_innerHTML +=  '<span class="attribute attribute--' + color + '">' + tag.charAt(0).toUpperCase() + tag.slice(1) + '</span>'
+    attributes_div_innerHTML +=
+      '<span class="attribute attribute--' +
+      color +
+      '">' +
+      tag.charAt(0).toUpperCase() +
+      tag.slice(1) +
+      '</span>';
   });
   attributes_div.innerHTML = attributes_div_innerHTML;
 
   const reviews_div = document.getElementsByClassName('reviews')[0];
   reviews_div.prepend(attributes_div);
 
-
-
   const review_h3 = document.createElement('h3');
-  review_h3.innerHTML = "Past Reviews (" + apartment.reviews.length + ")";
+  review_h3.innerHTML = 'Past Reviews (' + apartment.reviews.length + ')';
 
   // const reviews_div = document.getElementsByClassName('reviews')[0];
   reviews_div.prepend(review_h3);
 
-  apartment.reviews.forEach( review => {
-
+  apartment.reviews.forEach((review) => {
     const review_container_div = document.createElement('div');
     review_container_div.className = 'review-container';
 
-    review_container_div.innerHTML = 
-    '<div class="row">' +
-      '<div class="col-sm-5">' + 
-        '<p id="left-col">' + review.date + '</p>' +
-        '<p id="left-col">Overall: ' + review.overall_rating + '/5</p>' +
-        '<p id="left-col">Landlord: ' + review.landlord_rating + '/5</p>' +
+    review_container_div.innerHTML =
+      '<div class="row">' +
+      '<div class="col-sm-5">' +
+      '<p id="left-col">' +
+      review.date +
+      '</p>' +
+      '<p id="left-col">Overall: ' +
+      review.overall_rating +
+      '/5</p>' +
+      '<p id="left-col">Landlord: ' +
+      review.landlord_rating +
+      '/5</p>' +
       '</div>' +
       '<div class="col-sm-6">' +
-        '<p id="right-col">' + review.message + '</p>' + 
+      '<p id="right-col">' +
+      review.message +
+      '</p>' +
       '</div>' +
-    '</div>';
+      '</div>';
 
     reviews_div.appendChild(review_container_div);
   });
-
-
 </script>

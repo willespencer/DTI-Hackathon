@@ -115,54 +115,38 @@ h6 {
 }
 
 /*---------STAR RATING--------*/
-.rate-area {
-  float: left;
-  border-style: none;
+.rating {
+  display: flex;
+  justify-content: left;
 }
 
-.rate-area:not(:checked) > input {
-  position: absolute;
-  top: -9999px;
-  clip: rect(0, 0, 0, 0);
+.rating > input {
+  display: none;
 }
 
-.rate-area:not(:checked) > label {
-  float: right;
-  width: 0.8em;
-  overflow: hidden;
-  white-space: nowrap;
-  cursor: pointer;
-  font-size: 40px;
-  line-height: 32px;
-  color: lightgrey;
-  margin-bottom: 10px !important;
-}
-
-.rate-area:not(:checked) > label:before {
-  content: '★';
-}
-
-.rate-area > input:checked ~ label {
-  color: #e8262d;
-  text-shadow: none;
-}
-
-.rate-area:not(:checked) > label:hover,
-.rate-area:not(:checked) > label:hover ~ label {
-  color: #e8262d;
-}
-
-.rate-area > input:checked + label:hover,
-.rate-area > input:checked + label:hover ~ label,
-.rate-area > input:checked ~ label:hover,
-.rate-area > input:checked ~ label:hover ~ label,
-.rate-area > label:hover ~ input:checked ~ label {
-  color: #e8262d;
-  text-shadow: none;
-}
-
-.rate-area > label:active {
+.rating > label {
   position: relative;
-  top: 0px;
-  left: 0px;
+  width: 1em;
+  font-size: 2vw;
+  color: #c4c4c4;
+  cursor: pointer;
+}
+
+.rating > label::before {
+  content: '\2605';
+  position: left;
+  opacity: 0;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before {
+  opacity: 1 !important;
+}
+
+.rating > input:checked ~ label:before {
+  opacity: 1;
+}
+
+.rating:hover > input:checked ~ label:before {
+  opacity: 0.4;
 }
