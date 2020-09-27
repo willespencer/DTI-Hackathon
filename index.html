@@ -138,64 +138,57 @@
 
     <div class="bottom">
       <div class="apartments">
-        <div class="apartment-container">
-          <img src="images/ctownplaza.jpg" class="image" alt="Apartment" />
-          <div class="location">
-            <img class="pin" src="images/mapPin.svg" />
-            <a href="components/productPage.html">111 Dryden Road</a>
-          </div>
-          <div class="otherInfo">
-            <span class="landlord">Avramis Rentals</span>
-            <span class="numReviews">Reviews: 3</span>
-          </div>
-          <div class="attributes">
-            <span class="attribute attribute--green">Attribute 1</span>
-            <span class="attribute attribute--green">Attribute 2</span>
-            <span class="attribute attribute--red">Attribute 3</span>
-            <span class="attribute attribute--red">Attribute 4</span>
-            <span class="attribute attribute--yellow">Attribute 5</span>
-          </div>
-        </div>
-
-        <div class="apartment-container">
-          <img src="images/ctownplaza.jpg" class="image" alt="Apartment" />
-          <div class="location">
-            <img class="pin" src="images/mapPin.svg" />
-            <a href="components/productPage.html">111 Dryden Road</a>
-          </div>
-          <div class="otherInfo">
-            <span class="landlord">Avramis Rentals</span>
-            <span class="numReviews">Reviews: 3</span>
-          </div>
-          <div class="attributes">
-            <span class="attribute attribute--green">Attribute 1</span>
-            <span class="attribute attribute--green">Attribute 2</span>
-            <span class="attribute attribute--red">Attribute 3</span>
-            <span class="attribute attribute--red">Attribute 4</span>
-            <span class="attribute attribute--yellow">Attribute 5</span>
-          </div>
-        </div>
-
-        <div class="apartment-container">
-          <img src="images/ctownplaza.jpg" class="image" alt="Apartment" />
-          <div class="location">
-            <img class="pin" src="images/mapPin.svg" />
-            <a href="components/productPage.html">111 Dryden Road</a>
-          </div>
-          <div class="otherInfo">
-            <span class="landlord">Avramis Rentals</span>
-            <span class="numReviews">Reviews: 3</span>
-          </div>
-          <div class="attributes">
-            <span class="attribute attribute--green">Attribute 1</span>
-            <span class="attribute attribute--green">Attribute 2</span>
-            <span class="attribute attribute--red">Attribute 3</span>
-            <span class="attribute attribute--red">Attribute 4</span>
-            <span class="attribute attribute--yellow">Attribute 5</span>
-          </div>
-        </div>
       </div>
     </div>
     <script src="./scripts/main.js"></script>
+    <script src="./data/apartments.js"></script>
+    <script>
+      // const apartments refers to the json obj in the js file
+      apartments.forEach( apartment => {
+        // create div for each apartment
+
+        const apartment_container_div = document.createElement('div');
+        apartment_container_div.className = 'apartment-container';
+
+        apartment_container_div.innerHTML =
+          '<img src="images/' + apartment.image + '.jpg" class="image" alt="Apartment" />' +
+          '<div class="location">' +
+            '<img class="pin" src="images/mapPin.svg" />' +
+            '<a href="components/productPage.html">' + apartment.name + '</a>' +
+          '</div>' + 
+          '<div class="otherInfo">' + 
+            '<span class="landlord">' + apartment.landlord + '</span>' + 
+            '<span class="numReviews">Reviews: ' + apartment.reviews.length + '</span>' + 
+          '</div>';
+
+        // create tags for each apartment div
+        const attributes_div = document.createElement('div');
+        attributes_div.className = 'attributes';
+
+        let attributes_div_innerHTML = '';
+        Object.entries(apartment.tags_list).forEach( t => {
+          const tag = t[0];
+          const rating = t[1];
+
+          let color = 'red'; // rating is 1
+
+          if (rating == 2) {
+            color = 'yellow';
+          }
+          else {
+            color = 'green';
+          }
+
+          attributes_div_innerHTML +=  '<span class="attribute attribute--' + color + '">' + tag.charAt(0).toUpperCase() + tag.slice(1) + '</span>'
+        });
+        attributes_div.innerHTML = attributes_div_innerHTML;
+        // append attributes div to apartment-container div
+        apartment_container_div.appendChild(attributes_div);
+
+        // append apartment-container div to apartments div
+        document.getElementsByClassName('apartments')[0].appendChild(apartment_container_div);
+      });
+
+    </script>
   </body>
 </html>
