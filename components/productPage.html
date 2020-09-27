@@ -10,6 +10,11 @@
       crossorigin="anonymous"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
     <title>CU Apartments</title>
     <link rel="stylesheet" href="../styles/productPageStyles.css" />
   </head>
@@ -36,13 +41,19 @@
 
     <div class="info">
       <div class="row justify-content-md-center">
-        <div class="col-sm-6" id="left">
-          <!-- <h2>Collegetown Plaza</h2>
-          <h5>111 Dryden Road, Ithaca, NY 14850</h5>
-          <h5>Ithaca Renting Company</h5> -->
-          <div class="info-container">
-            <p class="info-emoji">🌟 🌟 🌟 🌟</p>
-            <p class="info-emoji">💰 💰 💰</p>
+        <div class="col-sm-6">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h2 id="apartment-name"></h2>
+                <h6 id="apartment-location"></h6>
+                <h6 id="apartment-landlord"></h6>
+              </div>
+              <div class="col" id="ratings">
+                <p id="landlord-rating">Landlord: </p>
+                <p id="overall-rating">Overall: </p>
+              </div>
+            </div>
           </div>
 
           <form class="review-form">
@@ -175,6 +186,7 @@
                   <a class="dropdown-item" href="#">Another action</a>
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
+                <br />
                 <h6 style="display: inline-block; font-size: 15px">wifi</h6>
                 <button
                   class="btn btn-secondary dropdown-toggle"
@@ -231,21 +243,34 @@
 
   const apartment = apartments.filter( apartment => apartment.name == apartment_name)[0];
 
-  // Populate left panel with data
-  const apartment_name_h2 = document.createElement('h2');
+  // Populate apartment details on left panel
+  const apartment_name_h2 = document.getElementById('apartment-name');
   apartment_name_h2.innerHTML = apartment.name;
 
-  const apartment_location_h5 = document.createElement('h5');
+  const apartment_location_h5 = document.getElementById('apartment-location');
   apartment_location_h5.innerHTML = apartment.location;
 
-  const apartment_landlord_h5 = document.createElement('h5');
+  const apartment_landlord_h5 = document.getElementById('apartment-landlord');
   apartment_landlord_h5.innerHTML = apartment.landlord;
 
-  const left_div = document.getElementById('left');
+  // Populate star ratings on left panel
+  const landlord_rating_element = document.getElementById('landlord-rating');
 
-  left_div.prepend(apartment_location_h5);
-  left_div.prepend(apartment_landlord_h5);
-  left_div.prepend(apartment_name_h2);
+  for (i = 0; i < apartment.landlord_rating; i++) {
+    landlord_rating_element.innerHTML += '<span class="fa fa-star checked"></span>';
+  }
+  for (i = 0; i < 5 - apartment.landlord_rating; i++) {
+    landlord_rating_element.innerHTML += '<span class="fa fa-star"></span>';
+  }
+
+  const overall_rating_element = document.getElementById('overall-rating');
+
+  for (i = 0; i < apartment.overall_rating; i++) {
+    overall_rating_element.innerHTML += '<span class="fa fa-star checked"></span>';
+  }
+  for (i = 0; i < 5 - apartment.overall_rating; i++) {
+    overall_rating_element.innerHTML += '<span class="fa fa-star"></span>';
+  }
 
   // Populate right panel with data
   const img_element = document.createElement('img');

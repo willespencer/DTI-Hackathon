@@ -11,22 +11,29 @@ nav {
 
 /* --------BOX STYLING--------*/
 
+.navbar-button {
+  color: black !important;
+  background-color: #ffe2b1 !important;
+  border: #ffe2b1 !important;
+}
+
 .content {
   margin-top: 100px;
   display: flex;
-  justify-content: center;
+  margin: 32px 10vw 0 10vw;
 }
 
 .box {
-  border: 2px gray solid;
-  padding: 20px 30px;
+  /* border: 2px gray solid;
+  padding: 20px 30px; */
 }
 
 .boxTitle {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 27px;
+  font-weight: 500;
 }
 
 .filters {
@@ -35,6 +42,12 @@ nav {
 
 #form-control {
   width: 500px;
+}
+
+.searchButton {
+  width: 150px;
+  background-color: #d01d38 !important;
+  color: white !important;
 }
 
 /*--------APARTMENT STYLING--------*/
