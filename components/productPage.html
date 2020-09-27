@@ -88,3 +88,14 @@
     </div>
   </body>
 </html>
+
+<script src="../data/apartments.js"></script>
+<script>
+  // Parse through url to get query string param for name
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const apartment_name = urlParams.get('name');
+
+  const apartment = apartments.filter( apartment => apartment.name == apartment_name)[0];
+
+</script>
