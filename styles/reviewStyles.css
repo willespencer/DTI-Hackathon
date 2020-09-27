@@ -22,6 +22,20 @@
   overflow: auto !important;
 }
 
+.submitbutton {
+  padding-top: 10px;
+}
+
+.textareabox {
+  padding-top: 20px;
+}
+
+.textarea {
+  width: 500px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 input {
   width: 50%;
   display: block;
