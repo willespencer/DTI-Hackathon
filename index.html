@@ -187,9 +187,10 @@
           const tag = t[0];
           const rating = t[1];
 
-          let color = 'red'; // rating is 1
-
-          if (rating == 2) {
+          if (rating == 1) {
+            color = 'red';
+          }
+          else if (rating == 2) {
             color = 'yellow';
           }
           else {
