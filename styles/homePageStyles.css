@@ -164,3 +164,17 @@ nav {
   display: none;
   z-index: 5;
 }
+
+.submitbutton {
+  padding-top: 10px;
+}
+
+.textareabox {
+  padding-top: 20px;
+}
+
+.textarea {
+  width: 500px;
+  padding: 10px;
+  border-radius: 10px;
+}
