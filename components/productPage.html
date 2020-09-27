@@ -45,27 +45,13 @@
           <div class="container">
             <div class="row">
               <div class="col">
-                <h2>Collegetown Plaza</h2>
-                <h6>111 Dryden Road, Ithaca, NY 14850</h6>
-                <h6>Ithaca Renting Company</h6>
+                <h2 id="apartment-name"></h2>
+                <h6 id="apartment-location"></h6>
+                <h6 id="apartment-landlord"></h6>
               </div>
-              <div class="col">
-                <p>
-                  Landlord:
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                </p>
-                <p>
-                  Overall:
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-                </p>
+              <div class="col" id="ratings">
+                <p id="landlord-rating">Landlord: </p>
+                <p id="overall-rating">Overall: </p>
               </div>
             </div>
           </div>
@@ -234,66 +220,90 @@
           </form>
         </div>
 
-        <div class="col-sm-5">
-          <img src="../images/ctownplaza.jpg" class="apt-img" alt="Apartment" />
+        <div class="col-sm-5" id="right">
+          <!-- <img src="../images/ctownplaza.jpg" class="apt-img" alt="Apartment" /> -->
           <div class="reviews">
-            <h3>Past Reviews (3)</h3>
-            <div class="review-container">
-              <div class="row">
-                <div class="col-sm-5">
-                  <p id="left-col">09/27/2020</p>
-                  <p id="left-col">Overall: 3/5</p>
-                  <p id="left-col">Landlord: 3/5</p>
-                </div>
-                <div class="col-sm-6">
-                  <p id="right-col">
-                    Really like the apartment, but our heater wasn't working and
-                    it took us days for us to get it fixed.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- <p class="review-text">
-
-                Amazing place to live! Great amenities and close to campus.
-                10/10 recommend!
-              </p> -->
-
-            <div class="review-container">
-              <div class="row">
-                <div class="col-sm-5">
-                  <p id="left-col">09/27/2020</p>
-                  <p id="left-col">Overall: 3/5</p>
-                  <p id="left-col">Landlord: 3/5</p>
-                </div>
-                <div class="col-sm-6">
-                  <p id="right-col">
-                    Really like the apartment, but our heater wasn't working and
-                    it took us days for us to get it fixed.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="review-container">
-              <div class="row">
-                <div class="col-sm-5">
-                  <p id="left-col">09/27/2020</p>
-                  <p id="left-col">Overall: 3/5</p>
-                  <p id="left-col">Landlord: 3/5</p>
-                </div>
-                <div class="col-sm-6">
-                  <p id="right-col">
-                    Really like the apartment, but our heater wasn't working and
-                    it took us days for us to get it fixed.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <!-- <h3>Past Reviews (3)</h3> -->
           </div>
         </div>
       </div>
     </div>
   </body>
 </html>
+
+<script src="../data/apartments.js"></script>
+<script>
+  // Parse through url to get query string param for name
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const apartment_name = urlParams.get('name');
+
+  const apartment = apartments.filter( apartment => apartment.name == apartment_name)[0];
+
+  // Populate apartment details on left panel
+  const apartment_name_h2 = document.getElementById('apartment-name');
+  apartment_name_h2.innerHTML = apartment.name;
+
+  const apartment_location_h5 = document.getElementById('apartment-location');
+  apartment_location_h5.innerHTML = apartment.location;
+
+  const apartment_landlord_h5 = document.getElementById('apartment-landlord');
+  apartment_landlord_h5.innerHTML = apartment.landlord;
+
+  // Populate star ratings on left panel
+  const landlord_rating_element = document.getElementById('landlord-rating');
+
+  for (i = 0; i < apartment.landlord_rating; i++) {
+    landlord_rating_element.innerHTML += '<span class="fa fa-star checked"></span>';
+  }
+  for (i = 0; i < 5 - apartment.landlord_rating; i++) {
+    landlord_rating_element.innerHTML += '<span class="fa fa-star"></span>';
+  }
+
+  const overall_rating_element = document.getElementById('overall-rating');
+
+  for (i = 0; i < apartment.overall_rating; i++) {
+    overall_rating_element.innerHTML += '<span class="fa fa-star checked"></span>';
+  }
+  for (i = 0; i < 5 - apartment.overall_rating; i++) {
+    overall_rating_element.innerHTML += '<span class="fa fa-star"></span>';
+  }
+
+  // Populate right panel with data
+  const img_element = document.createElement('img');
+  img_element.src = "../images/" + apartment.image + ".jpg";
+  img_element.className = "apt-img";
+  img_element.alt = "Apartment";
+
+  const right_div = document.getElementById('right');
+  right_div.prepend(img_element);
+
+  // Populate reviews
+  const review_h3 = document.createElement('h3');
+  review_h3.innerHTML = "Past Reviews (" + apartment.reviews.length + ")";
+
+  const reviews_div = document.getElementsByClassName('reviews')[0];
+  reviews_div.prepend(review_h3);
+
+  apartment.reviews.forEach( review => {
+
+    const review_container_div = document.createElement('div');
+    review_container_div.className = 'review-container';
+
+    review_container_div.innerHTML = 
+    '<div class="row">' +
+      '<div class="col-sm-5">' + 
+        '<p id="left-col">' + review.date + '</p>' +
+        '<p id="left-col">Overall: ' + review.overall_rating + '/5</p>' +
+        '<p id="left-col">Landlord: ' + review.landlord_rating + '/5</p>' +
+      '</div>' +
+      '<div class="col-sm-6">' +
+        '<p id="right-col">' + review.message + '</p>' + 
+      '</div>' +
+    '</div>';
+
+    reviews_div.appendChild(review_container_div);
+  });
+
+
+</script>
