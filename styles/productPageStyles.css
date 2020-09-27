@@ -46,6 +46,10 @@ nav {
   padding-top: 20px;
 }
 
+.checked {
+  color: #d01d38;
+}
+
 #dropdownMenuButton {
   color: grey;
   background-color: white;
@@ -97,12 +101,9 @@ nav {
   padding-top: 100px;
 }
 
-h5 {
+h6 {
   color: gray;
-}
-
-.info-container {
-  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
 .info-emoji {
